@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem 
+        id="menu_employee_skills_root"
+        name="Employee Skills"
+        web_icon="employee_skills,static/description/icon.png"
+        sequence="5"/>
+
+    <!-- Sub Menus -->
+    <menuitem 
+        id="menu_employee_skills"
+        name="Skills"
+        parent="menu_employee_skills_root"
+        action="action_employee_skill"
+        sequence="1"/>
+
+    <menuitem 
+        id="menu_skill_levels"
+        name="Skill Levels"
+        parent="menu_employee_skills_root"
+        action="action_skill_level"
+        sequence="2"/>
+</odoo>

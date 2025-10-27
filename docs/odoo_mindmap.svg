@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <style>
+    .node { fill: #ffffff; stroke: #2b4f8c; stroke-width:2px; rx:10; }
+    .center { fill: #2b4f8c; stroke: #1b365f; }
+    .text { font-family: Arial, Helvetica, sans-serif; font-size:14px; fill:#111827; }
+    .ctext { font-family: Arial, Helvetica, sans-serif; font-size:16px; fill:#ffffff; font-weight:700 }
+    .link { stroke: #7b8ca3; stroke-width:2px; }
+  </style>
+
+  <!-- center -->
+  <rect x="480" y="300" width="240" height="80" class="center node" rx="12"/>
+  <text x="600" y="350" text-anchor="middle" class="ctext">Odoo Application</text>
+
+  <!-- Top: Browser -->
+  <rect x="520" y="60" width="160" height="50" class="node"/>
+  <text x="600" y="92" text-anchor="middle" class="text">Browser / Client</text>
+  <line x1="600" y1="110" x2="600" y2="300" class="link"/>
+
+  <!-- Web layer -->
+  <rect x="480" y="160" width="240" height="60" class="node"/>
+  <text x="600" y="195" text-anchor="middle" class="text">Web Layer (ir.http)</text>
+  <line x1="600" y1="220" x2="600" y2="300" class="link"/>
+
+  <!-- Left cluster -->
+  <rect x="70" y="220" width="200" height="50" class="node"/>
+  <text x="170" y="250" text-anchor="middle" class="text">Controllers / Routes</text>
+  <line x1="270" y1="245" x2="480" y2="340" class="link"/>
+
+  <rect x="70" y="320" width="200" height="50" class="node"/>
+  <text x="170" y="350" text-anchor="middle" class="text">Views &amp; QWeb Templates</text>
+  <line x1="270" y1="345" x2="480" y2="360" class="link"/>
+
+  <!-- Right cluster -->
+  <rect x="930" y="220" width="200" height="50" class="node"/>
+  <text x="1030" y="250" text-anchor="middle" class="text">Actions / Menus</text>
+  <line x1="930" y1="245" x2="720" y2="340" class="link"/>
+
+  <rect x="930" y="320" width="200" height="50" class="node"/>
+  <text x="1030" y="350" text-anchor="middle" class="text">Scheduler / ir.cron</text>
+  <line x1="930" y1="345" x2="720" y2="360" class="link"/>
+
+  <!-- Bottom cluster: ORM & DB -->
+  <rect x="320" y="480" width="240" height="60" class="node"/>
+  <text x="440" y="515" text-anchor="middle" class="text">ORM &amp; Models</text>
+  <line x1="560" y1="380" x2="560" y2="480" class="link"/>
+  <line x1="560" y1="480" x2="600" y2="380" class="link"/>
+
+  <rect x="620" y="480" width="360" height="80" class="node"/>
+  <text x="800" y="510" text-anchor="middle" class="text">PostgreSQL (Data) &amp; Filestore (attachments, sessions)</text>
+  <line x1="560" y1="380" x2="800" y2="480" class="link"/>
+
+  <!-- Security -->
+  <rect x="480" y="420" width="240" height="40" class="node"/>
+  <text x="600" y="448" text-anchor="middle" class="text">Security (ir.model.access, ir.rule)</text>
+  <line x1="600" y1="380" x2="600" y2="420" class="link"/>
+
+  <!-- Email / Integrations -->
+  <rect x="480" y="580" width="240" height="40" class="node"/>
+  <text x="600" y="608" text-anchor="middle" class="text">Email / External APIs</text>
+  <line x1="720" y1="520" x2="720" y2="600" class="link"/>
+
+  <!-- labels for quick hints -->
+  <text x="100" y="70" class="text">Typical request flow: Browser → Web Layer → Controller → ORM → DB</text>
+
+  <text x="100" y="740" class="text">Notes: In Docker setups Postgres runs in a `db` container (persist via volumes). Filestore lives in `filestore` inside Odoo data dir.</text>
+</svg>

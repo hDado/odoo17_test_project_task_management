@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Employee Skill Views -->
+    <record id="view_employee_skill_tree" model="ir.ui.view">
+        <field name="name">employee.skill.tree</field>
+        <field name="model">employee.skill</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="employee_id"/>
+                <field name="name"/>
+                <field name="level_id"/>
+                <field name="acquisition_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_employee_skill_form" model="ir.ui.view">
+        <field name="name">employee.skill.form</field>
+        <field name="model">employee.skill</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="level_id"/>
+                            <field name="acquisition_date"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Notes">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_employee_skill" model="ir.actions.act_window">
+        <field name="name">Employee Skills</field>
+        <field name="res_model">employee.skill</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

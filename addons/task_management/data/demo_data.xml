@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Demo categories -->
+    <record id="cat_development" model="task.category">
+        <field name="name">Development</field>
+        <field name="description">Development tasks</field>
+        <field name="color">6</field>
+    </record>
+
+    <record id="cat_bug" model="task.category">
+        <field name="name">Bug Fixing</field>
+        <field name="description">Fix reported bugs</field>
+        <field name="color">2</field>
+    </record>
+
+    <record id="cat_docs" model="task.category">
+        <field name="name">Documentation</field>
+        <field name="description">Write docs and guides</field>
+        <field name="color">4</field>
+    </record>
+
+    <record id="cat_design" model="task.category">
+        <field name="name">Design</field>
+        <field name="description">Design and UX tasks</field>
+        <field name="color">8</field>
+    </record>
+
+    <!-- Demo tasks -->
+    <record id="task_auth" model="task.task">
+        <field name="name">Implement User Authentication</field>
+        <field name="description">Set up user authentication system with JWT tokens</field>
+        <field name="category_id" ref="cat_development"/>
+        <field name="priority">2</field>
+        <field name="date_end">2025-11-03</field>
+    </record>
+
+    <record id="task_fix_login" model="task.task">
+        <field name="name">Fix Login Page Bug</field>
+        <field name="description">Users unable to reset password through forgot password link</field>
+        <field name="category_id" ref="cat_bug"/>
+        <field name="priority">2</field>
+        <field name="date_end">2025-10-29</field>
+    </record>
+
+    <record id="task_docs_api" model="task.task">
+        <field name="name">Write API Documentation</field>
+        <field name="description">Create comprehensive API documentation for all endpoints</field>
+        <field name="category_id" ref="cat_docs"/>
+        <field name="priority">1</field>
+        <field name="date_end">2025-11-01</field>
+    </record>
+</odoo>
